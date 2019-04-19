@@ -6,5 +6,6 @@ router.get('/', singerCtrl.showAllSingers)
 router.get('/new', singerCtrl.showNewPage)
 router.post('/', singerCtrl.addSinger)
 router.get('/:id', singerCtrl.showOneSinger)
+router.delete('/:id', singerCtrl.deleteOneSinger)
 
 module.exports = router

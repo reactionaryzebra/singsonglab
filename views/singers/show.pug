@@ -8,4 +8,6 @@ html(lang="en")
     p Age: #{singer.age}
     p Gender: #{singer.gender}
     p Genre: #{singer.genre}
+    form(action=`/singers/${singer.id}?_method=DELETE` method='post')
+      input(type='submit' value='Delete this singer')
     
