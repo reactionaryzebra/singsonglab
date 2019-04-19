@@ -3,6 +3,7 @@ const app = express()
 const bodyParser = require('body-parser')
 const methodOverride = require('method-override')
 const singerRoutes = require('./routes/singerRoutes')
+const songRoutes = require('./routes/songRoutes')
 require('./db/db.js')
 
 app.listen(3000, () => {
@@ -16,4 +17,5 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json())
 app.use(methodOverride('_method'))
 
+app.use('/songs', songRoutes)
 app.use('/singers', singerRoutes)

@@ -1,0 +1,17 @@
+doctype html
+html(lang="en")
+  head
+    title= pageTitle
+    script(type='text/javascript').
+  body
+    form(action='/songs' method='post')
+      |Artist:
+      select(name='singerId')
+        each singer in singers
+          option(value=`${singer.id}`)=singer.name
+      |Title:
+      input(type='text' name='title')
+      br
+      |Release Year:
+      input(type='number' name='releaseYear')
+      input(type='submit' value='Create Song')
