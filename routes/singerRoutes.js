@@ -3,5 +3,8 @@ const router = express.Router()
 const singerCtrl = require('../controllers/singerCtrl')
 
 router.get('/', singerCtrl.showAllSingers)
+router.get('/new', singerCtrl.showNewPage)
+router.post('/', singerCtrl.addSinger)
+router.get('/:id', singerCtrl.showOneSinger)
 
 module.exports = router

@@ -6,4 +6,5 @@ html(lang="en")
   body
     ul
       each singer in singers
-        li=singer.name
+        li 
+          a(href=`/singers/${singer.id}`)=singer.name

@@ -1,0 +1,20 @@
+doctype html
+html(lang="en")
+  head
+    title= pageTitle
+    script(type='text/javascript').
+  body
+    form(action='/singers' method='post')
+      |Name:
+      input(type='text' name='name')
+      br
+      |Age:
+      input(type='number' name='age')
+      br
+      |Gender:
+      input(type='text' name='gender')
+      br
+      |Genre:
+      input(type='text' name='genre')
+      br
+      input(type='submit' value='Create Singer')
