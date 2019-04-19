@@ -32,11 +32,27 @@ const deleteOneSinger = (req, res) => {
   })
 }
 
+const showEditPage = (req, res) => {
+  Singer.findById(req.params.id, (err, singer) => {
+    err ? console.log(err) : res.render('./singers/edit', {
+      singer
+    })
+  })
+}
+
+const updateSinger = (req, res) => {
+  Singer.findByIdAndUpdate(req.params.id, req.body, (err, singer) => {
+    err ? console.log(err) : res.redirect('/singers')
+  })
+}
+
 
 module.exports = {
   showAllSingers,
   showNewPage,
   addSinger,
   showOneSinger,
-  deleteOneSinger
+  deleteOneSinger,
+  showEditPage,
+  updateSinger
 }

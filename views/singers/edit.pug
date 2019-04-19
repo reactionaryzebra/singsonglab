@@ -1,0 +1,20 @@
+doctype html
+html(lang="en")
+  head
+    title= pageTitle
+    script(type='text/javascript').
+  body
+    form(action=`/singers/${singer.id}?_method=PUT` method='post')
+      |Name:
+      input(type='text' name='name' value=`${singer.name}`)
+      br
+      |Age:
+      input(type='number' name='age' value=`${singer.age}`)
+      br
+      |Gender:
+      input(type='text' name='gender' value=`${singer.gender}`)
+      br
+      |Genre:
+      input(type='text' name='genre' value=`${singer.genre}`)
+      br
+      input(type='submit' value='Edit Singer')

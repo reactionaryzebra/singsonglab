@@ -8,6 +8,8 @@ html(lang="en")
     p Age: #{singer.age}
     p Gender: #{singer.gender}
     p Genre: #{singer.genre}
+    a(href=`/singers/${singer.id}/edit`)
+      button Edit this Singer
     form(action=`/singers/${singer.id}?_method=DELETE` method='post')
       input(type='submit' value='Delete this singer')
     
