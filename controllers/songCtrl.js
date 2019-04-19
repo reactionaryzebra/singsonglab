@@ -11,7 +11,13 @@ const showNewPage = (req, res) => {
 
 const addSong = (req, res) => {
   Song.create(req.body, (err, song) => {
-    err ? console.log(err) : res.redirect('/songs')
+    err ? console.log(err) :
+      Singer.findById(req.body.singerId, (err, singer) => {
+        err ? console.log(err) :
+          singer.songs.push(song)
+        singer.save()
+        res.redirect('/songs')
+      })
   })
 }
 

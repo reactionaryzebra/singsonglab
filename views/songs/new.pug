@@ -9,9 +9,11 @@ html(lang="en")
       select(name='singerId')
         each singer in singers
           option(value=`${singer.id}`)=singer.name
+      br
       |Title:
       input(type='text' name='title')
       br
       |Release Year:
       input(type='number' name='releaseYear')
+      br
       input(type='submit' value='Create Song')

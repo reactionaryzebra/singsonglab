@@ -19,11 +19,14 @@ const addSinger = (req, res) => {
 }
 
 const showOneSinger = (req, res) => {
-  Singer.findById(req.params.id, (err, singer) => {
-    err ? console.log(err) : res.render('./singers/show', {
-      singer
+  Singer.findById(req.params.id)
+    .populate('songs')
+    .exec((err, singer) => {
+      console.log(singer.songs);
+      err ? console.log(err) : res.render('./singers/show', {
+        singer
+      })
     })
-  })
 }
 
 const deleteOneSinger = (req, res) => {
